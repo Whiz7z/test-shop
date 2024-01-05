@@ -1,0 +1,9 @@
+.popupOnHover img {
+  cursor: pointer;
+  object-fit: contain;
+  transition: 0.5s;
+}
+
+.popupOnHover img:hover {
+  transform: scale(0.9);
+}
