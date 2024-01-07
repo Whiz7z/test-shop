@@ -3,6 +3,7 @@ import ProductList from "./components/ProductList/ProductList";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import Cart from "./components/Cart/Cart";
 import OrderForm from "./components/OrderForm/OrderForm";
+import OrderPlaced from "./components/OrderPlaced/OrderPlaced";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "./redux/productsSlice";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/product/:id" element={<ProductDetail />} exact />
         <Route path="/cart" element={<Cart />} exact />
         <Route path="/checkout" element={<OrderForm />} exact />
+        <Route path="/success" element={<OrderPlaced />} exact />
       </Routes>
     </div>
   );

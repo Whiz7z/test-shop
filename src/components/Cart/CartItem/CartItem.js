@@ -1,28 +1,76 @@
+import "./CartItem.css";
 import React from "react";
+import { Link } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+import {
+  addToCart,
+  removeFromCart,
+  decreaseQuantity,
+} from "../../../redux/cartSlice";
+import { FiPlusSquare, FiMinusSquare } from "react-icons/fi";
 
 const CartItem = ({ product }) => {
+  const dispatch = new useDispatch();
   const { id, image, title, price, quantity } = product;
+
+  const onIncreaseQuantity = (product) => {
+    dispatch(addToCart(product));
+  };
+
+  const onDecreaseQuantity = (product) => {
+    dispatch(decreaseQuantity(product));
+  };
+
+  const onRemoveFromCart = (id) => {
+    dispatch(removeFromCart(id));
+  };
+
   return (
-    <div className="flex justify-between items-center border-b py-2">
-      <div>
-        <img src={image} alt={title} width={150} height={150} />
+    <div className="grid grid-cols-[150px_3fr_1fr] gap-4 justify-between items-center border-b py-2">
+      <div className="w-[150px] h-[150px] ">
+        <img
+          src={image}
+          alt={title}
+          width={"150px"}
+          height={"150px"}
+          className=" w-[150px] object-contain  h-full"
+        />
       </div>
       <div>
-        <p className="text-lg font-bold">{title}</p>
+        <Link
+          to={`/product/${id}`}
+          className="text-lg text-gray-500 font-bold hover:underline hover:text-blue-600"
+        >
+          {title}
+        </Link>
         <p className="text-gray-500">${price} each</p>
       </div>
-      <div className="flex items-center">
-        <div className="grid grid-cols-[1fr_3fr_1fr] justify-items-center items-center">
-          <span>+</span>
+      <div className="grid items-center">
+        <div className="grid grid-cols-[1fr_2fr_1fr] justify-items-center items-center">
+          <span
+            className="pointer w-[35px] h-[35px]"
+            onClick={() => onDecreaseQuantity({ ...product })}
+          >
+            <FiMinusSquare />
+          </span>
           <button
-            onClick={() => console.log(id)}
-            className="bg-red-500 text-white  py-1 rounded hover:bg-red-600"
+            onClick={() => onRemoveFromCart(id)}
+            className="bg-red-500 text-white p-x-3  p-2 rounded hover:bg-red-600"
           >
             Remove
           </button>
-          <span>-</span>
+
+          <span
+            className="pointer w-[35px] h-[35px]"
+            onClick={() => onIncreaseQuantity({ ...product })}
+          >
+            <FiPlusSquare />
+          </span>
         </div>
-        <p className="text-blue-600 font-bold">{quantity}x</p>
+        <p className="justify-self-center text-blue-600 font-bold text-lg">
+          {quantity}x
+        </p>
       </div>
     </div>
   );
