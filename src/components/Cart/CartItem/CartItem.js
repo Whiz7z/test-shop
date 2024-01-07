@@ -54,7 +54,7 @@ const CartItem = ({ product }) => {
           </span>
           <button
             onClick={() => onRemoveFromCart(id)}
-            className="bg-red-500 text-white px-2 bigtablet:px-3  p-1 bigtalet:p-2 rounded hover:bg-red-600"
+            className="bg-red-500 text-white bigtablet:py-2 xl:px-5 bigtablet:px-3  p-1 bigtalet:p-2 rounded hover:bg-red-600"
           >
             Remove
           </button>
