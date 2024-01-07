@@ -27,20 +27,18 @@ const CartItem = ({ product }) => {
   };
 
   return (
-    <div className="grid grid-cols-[150px_3fr_1fr] gap-4 justify-between items-center border-b py-2">
-      <div className="w-[150px] h-[150px] ">
+    <div className="grid grid-cols-[60px_3fr_1fr] bigtablet:grid-cols-[150px_3fr_1fr] gap-4 justify-between items-center border-b py-2">
+      <div className="bigtablet:w-[150px] bigtablet:h-[150px] w-[60px] h-[60px]">
         <img
           src={image}
           alt={title}
-          width={"150px"}
-          height={"150px"}
           className=" w-[150px] object-contain  h-full"
         />
       </div>
       <div>
         <Link
           to={`/product/${id}`}
-          className="text-lg text-gray-500 font-bold hover:underline hover:text-blue-600"
+          className="text-[12px] bigtablet:text-lg text-gray-500 font-bold hover:underline hover:text-blue-600"
         >
           {title}
         </Link>
@@ -49,20 +47,20 @@ const CartItem = ({ product }) => {
       <div className="grid items-center">
         <div className="grid grid-cols-[1fr_2fr_1fr] justify-items-center items-center">
           <span
-            className="pointer w-[35px] h-[35px]"
+            className="pointer w-[25px] h-[25px] bigtablet:w-[35px] bigtablet:h-[35px]"
             onClick={() => onDecreaseQuantity({ ...product })}
           >
             <FiMinusSquare />
           </span>
           <button
             onClick={() => onRemoveFromCart(id)}
-            className="bg-red-500 text-white p-x-3  p-2 rounded hover:bg-red-600"
+            className="bg-red-500 text-white px-2 bigtablet:px-3  p-1 bigtalet:p-2 rounded hover:bg-red-600"
           >
             Remove
           </button>
 
           <span
-            className="pointer w-[35px] h-[35px]"
+            className="pointer w-[25px] h-[25px] bigtablet:w-[35px] bigtablet:h-[35px]"
             onClick={() => onIncreaseQuantity({ ...product })}
           >
             <FiPlusSquare />

@@ -89,12 +89,12 @@ const ProductList = () => {
   }, [dispatch]);
 
   return (
-    <div className="grid gap-4 grid-cols-[240px_1fr_200px]  mt-4 w-full">
+    <div className="grid gap-4 grid-cols-[1fr] lg:grid-cols-[240px_1fr] grid-cols-xl-[240px_1fr_200px]  mt-4 w-full">
       <Sidebar onResetPage={resetPageHandler} />
-      <div className="grid w-[1000px]  justify-self-center">
+      <div className="grid max-w-[1000px]  justify-self-center">
         <div
-          className=" grid grid-cols-1 md:grid-cols-2 
-        lg:grid-cols-3 gap-4 "
+          className=" grid grid-cols-1 lg:grid-cols-2 
+        xl:grid-cols-3 gap-4 "
         >
           {currentProducts &&
             currentProducts.map((product) => (

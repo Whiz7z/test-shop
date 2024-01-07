@@ -34,8 +34,12 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="grid grid-cols-[1fr_2fr] gap-4 items-center">
-      <img src={image} alt={title} className="w-full h-auto mb-4" />
+    <div className="grid lg:grid-cols-[1fr_2fr] gap-4 items-center mt-[60px]">
+      <img
+        src={image}
+        alt={title}
+        className="h-[400px] lg:w-full lg:h-auto mb-4 justify-self-center"
+      />
       <div className="grid h-full content-start text-start self-start gap-4 ">
         <div className="flex items-center justify-center mt-[120px]">
           <p className="text-yellow-500">Rating: {rating.rate}</p>

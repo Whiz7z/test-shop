@@ -30,26 +30,28 @@ const Search = () => {
   }, [searchQuery]);
 
   return (
-    <div className="flex items-center text-black">
+    <div className="grid gap-2 bigtablet:flex items-center text-black">
       <input
         type="text"
         placeholder="Search products..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-[300px] px-2 py-2 border border-gray-300  focus:outline-none border-none"
+        className="w-[120px] lg:w-[300px] px-2 py-2 border border-gray-300  focus:outline-none border-none"
       />
-      <button
-        onClick={handleSearch}
-        className="ml-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded"
-      >
-        Search
-      </button>
-      <button
-        onClick={onClearSearch}
-        className="ml-2 px-4 py-2 bg-red-500 text-white hover:bg-red-600 rounded"
-      >
-        Clear
-      </button>
+      <div className="grid grid-cols-[1fr_1fr]">
+        <button
+          onClick={handleSearch}
+          className="justify-selft-startml-2 px-2 py-1 big-tablet:px-4 bigtablet:py-2 bg-blue-500 hover:bg-blue-600 text-white rounded"
+        >
+          Search
+        </button>
+        <button
+          onClick={onClearSearch}
+          className="justify-selft-end ml-2 px-2 py-1 big-tablet:px-4 bigtablet:py-2 bg-red-500 text-white hover:bg-red-600 rounded"
+        >
+          Clear
+        </button>
+      </div>
     </div>
   );
 };

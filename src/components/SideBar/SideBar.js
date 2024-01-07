@@ -27,7 +27,7 @@ const Sidebar = ({ onResetPage }) => {
   }, []);
 
   return (
-    <div className="bg-gray-800 text-white p-4 max-h-[360px] sticky top-4 justify-self-start w-full">
+    <div className="bg-gray-800 text-white p-4 max-h-[360px] lg:sticky top-4 justify-self-start w-full">
       <h2 className="text-xl font-bold mb-4">Categories</h2>
       <ul className="grid">
         <li

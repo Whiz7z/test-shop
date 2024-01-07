@@ -11,7 +11,7 @@ const Cart = () => {
     console.log(cart);
   }, [cart]);
   return (
-    <div className="w-[60%]">
+    <div className="bigtablet:w-[60%]">
       <h2 className="text-2xl font-bold mb-4">Shopping Cart</h2>
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
